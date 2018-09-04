@@ -396,6 +396,9 @@ class Git:
         my_output = subprocess.check_output(
             ["git", "commit", "-m", commit_msg], cwd=top_repo_path
         )
+        my_push_output = subprocess.check_output(
+             ["git", "push"], cwd=top_repo_path
+         )
         return my_output
 
     def pull(self, origin, master, curr_fb_path):
