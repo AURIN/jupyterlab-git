@@ -64,3 +64,17 @@ jupyter lab build
 ```
 
 
+# Installing on JUNO
+
+This extension has been altered to push all the files in the git directory to a specified remote.
+
+* Build and install the extension "jupyterlab-git" as specified above
+* Alter the JUNO-Infra script to copy JUNO-Demo/gitInit.py to each user container.
+* The python script gitInit.py needs an github authenticating token, for demo this was kept in config.cfg. Pick it up from environment secrets.
+* The github auth token should be generated though JUNO's main github account. All user repos will live in this account.
+* Alter the JUNO-Infra user initializing script to include functionality from JUNO-Demo/initUser.sh
+
+## Checking the push functionality
+
+* After user setup, create a notebook and click commit in the extension.
+* A new repo will be available in the JUNO account with the notebook already pushed.
